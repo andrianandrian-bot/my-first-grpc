@@ -1,0 +1,21 @@
+syntax="proto3";
+
+package com.example.proto;
+
+service MyService {
+  rpc MyRequest(MyMessage) returns (MyMessageResponse);
+  rpc MyRequestSecond(MyMessage) returns (stream MyMessageResponse);
+}
+
+message MyMessage {
+  int32 id = 1;
+  string body = 2;
+  string time = 3;
+}
+
+message MyMessageResponse {
+  int32 id = 1;
+  string body = 2;
+  string time = 3;
+}
+
